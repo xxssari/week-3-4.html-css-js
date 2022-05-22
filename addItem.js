@@ -1,13 +1,17 @@
 //사용자가 추가한 내용 (이름, 사진, 내용) 이 html에 반영되어 화면에 출력될 수 있게 함.
 
-function addItem(name,image,content){
+function addItem(name,image,content) {
     const div = document.createElement("div");
     div.classList.add("card");
-    div.innerHTML = '
+    div.innerHTML = `
         <img src="${image}" alt="${name}"/>
         <span> ${content} </span>
-        '
+        `;
     document.querySelector("#container").appendChild(div);
+
+    const span = document.createElement("span");
+    span.innerHTML = name;
+    document.querySelector("#sidebar").appendChild(span);
 }
 
 function addItemHandle(e){
