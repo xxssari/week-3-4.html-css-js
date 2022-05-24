@@ -1,11 +1,10 @@
 //사용자가 추가한 내용 (이름, 사진, 내용) 이 html에 반영되어 화면에 출력될 수 있게 함.
-
 function addItem(name,image,content) {
     const div = document.createElement("div");
     div.classList.add("card");
     div.innerHTML = `
-        <img src="${image}" alt="${name}"/>
-        <span> ${content} </span>
+            <img src="${image}" alt="${name}" />
+            <span>${content}</span>
         `;
     document.querySelector("#container").appendChild(div);
 
@@ -19,11 +18,11 @@ function addItemHandle(e){
     const name = document.getElementById("name").value;
     const image = document.getElementById("image").value;
     const content = document.getElementById("content").value;
-    addItem(name,image,content);
+    addItem(name, image, content);
     closeModal();
 }
 
-document.getElementById(addItemForm).addEventListener("submit",addItemHandle);
+document.getElementById("addItemForm").addEventListener("submit",addItemHandle);
 
 //정리
 //(1)인풋의 내용이 html에 추가되는 기능을 가진 함수를 만듦.
